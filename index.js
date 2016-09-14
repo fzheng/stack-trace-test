@@ -1,10 +1,11 @@
-// start here
 'use strict';
-const st = require('stack-trace');
-const caller = st.get()[1];
-let n = 200000;
+let n = 1000000;
+let x = '';
 while (--n >= 0) {
-  console.time("Loop " + n);
-  console.log({caller: caller.getFileName(), line: caller.getLineNumber()});
-  console.timeEnd("Loop " + n);
+  x = foo(x, "Hello World [" + Date.now() + "]\n");
+}
+console.log(x);
+
+function foo(pre, str) {
+  return pre + str;
 }
