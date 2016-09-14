@@ -1,11 +1,6 @@
 'use strict';
-let n = 1000000;
-let x = '';
-while (--n >= 0) {
-  x = foo(x, "Hello World [" + Date.now() + "]\n");
-}
-console.log(x);
-
-function foo(pre, str) {
-  return pre + str;
+let n = 0;
+while (true) {
+  let obj = process.memoryUsage();
+  console.log("Loop: " + (n++) + "; heapTotal: " + (obj.heapTotal >> 20) + " MB; heapUsed: " + (obj.heapUsed >> 20) + " MB");
 }

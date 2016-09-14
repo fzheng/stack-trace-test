@@ -10,7 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "bunyan": "^1.8.1",
-    "object-sizeof": "^1.1.1",
     "stack-trace": "0.0.9"
   }
 }
