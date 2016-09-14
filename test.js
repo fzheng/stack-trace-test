@@ -1,10 +1,10 @@
 'use strict';
-let n = 2000000;
-while (--n >= 0) {
-  foo(n);
+let n = 0;
+while (true) {
+  foo(n++);
 }
 
 function foo(n) {
   let obj = process.memoryUsage();
-  console.log("n: " + n + "; heapTotal: " + obj.heapTotal + "; heapUsed: " + obj.heapUsed);
+  console.log("Loop: " + n + "; heapTotal: " + Math.floor(obj.heapTotal/1024/1024) + " MB; heapUsed: " + Math.floor(obj.heapUsed/1024/1024) + " MB");
 }
